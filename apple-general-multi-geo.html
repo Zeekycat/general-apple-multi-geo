@@ -1,311 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claim Your Reward - Follow Simple Steps</title>
-    <meta name="description" content="Complete simple steps to claim your reward. Enter your info, complete deals, and get rewarded today!" />
-    <meta name="author" content="Lovable" />
-    <link rel="canonical" href="https://lovable.dev" />
-    
-    <meta property="og:title" content="Claim Your Reward - Follow Simple Steps" />
-    <meta property="og:description" content="Complete simple steps to claim your reward. Enter your info, complete deals, and get rewarded today!" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, hsl(0, 0%, 10%) 0%, hsl(0, 0%, 5%) 50%, hsl(0, 0%, 8%) 100%);
-            color: hsl(0, 0%, 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 3rem 1rem;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 28rem;
-        }
-        
-        .logo-section {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-            animation: fadeIn 0.6s ease-out, float 3s ease-in-out infinite;
-        }
-        
-        .logo-wrapper {
-            background: black;
-            border-radius: 19px;
-            padding: 0.75rem;
-            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.8);
-            border: 2px solid hsl(0, 0%, 25%, 0.5);
-            transition: all 0.3s ease;
-        }
-        
-        .logo-wrapper:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 50px -10px rgba(0, 0, 0, 0.9);
-        }
-        
-        .logo-wrapper img {
-            width: 6rem;
-            height: auto;
-            object-fit: contain;
-        }
-        
-        h1 {
-            font-size: 1.875rem;
-            font-weight: bold;
-            text-align: center;
-            margin: 1.5rem 0;
-            animation: fadeIn 0.6s ease-out;
-            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
-        }
-        
-        .steps-list {
-            margin: 1.5rem 0;
-        }
-        
-        .step {
-            text-align: center;
-            margin: 1rem 0;
-            font-size: 1.25rem;
-            font-weight: 500;
-            animation: slideUp 0.6s ease-out;
-        }
-        
-        .step:nth-child(1) { animation-delay: 0ms; }
-        .step:nth-child(2) { animation-delay: 100ms; }
-        .step:nth-child(3) { animation-delay: 200ms; }
-        .step:nth-child(4) { animation-delay: 300ms; }
-        
-        .important {
-            margin-left: 0.5rem;
-            font-style: italic;
-            font-weight: normal;
-        }
-        
-        .cta-button {
-            width: 100%;
-            height: 4rem;
-            background: hsl(0, 0%, 92%);
-            color: hsl(0, 0%, 10%);
-            border: none;
-            border-radius: 1.5rem;
-            font-size: 1.125rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 2rem 0 1rem;
-            animation: slideUp 0.6s ease-out 0.4s backwards;
-        }
-        
-        .cta-button:hover {
-            background: hsl(0, 0%, 85%);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        }
-        
-        .verification {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            color: hsl(0, 0%, 65%);
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin: 1rem 0;
-            animation: fadeIn 0.6s ease-out 0.5s backwards, float 3s ease-in-out infinite;
-        }
-        
-        .check-icon {
-            width: 1rem;
-            height: 1rem;
-        }
-        
-        .stats-card {
-            background: linear-gradient(135deg, hsl(0, 0%, 15%) 0%, hsl(0, 0%, 8%) 50%, hsl(0, 0%, 12%) 100%);
-            border: 2px solid hsl(0, 0%, 25%, 0.5);
-            border-radius: 1.5rem;
-            padding: 2rem;
-            margin-top: 1.5rem;
-            animation: slideUp 0.6s ease-out 0.6s backwards;
-            transition: all 0.3s ease;
-        }
-        
-        .stats-card:hover {
-            border-color: hsl(0, 0%, 92%, 0.3);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-            transform: scale(1.02);
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-        
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.25rem;
-            transition: all 0.5s ease-out;
-        }
-        
-        .stat-label {
-            font-size: 0.75rem;
-            color: hsl(0, 0%, 65%);
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        @media (max-width: 640px) {
-            body {
-                padding: 3rem 1rem;
-            }
-            
-            h1 {
-                font-size: 1.5rem;
-            }
-            
-            .stats-grid {
-                gap: 1rem;
-            }
-            
-            .stat-value {
-                font-size: 1.25rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claim Your Reward - Follow Simple Steps</title>
+  <meta name="description" content="Complete simple steps to claim your reward. Enter your info, complete deals, and get rewarded today!" />
+  <meta name="author" content="Lovable" />
+  
+  <meta property="og:title" content="Claim Your Reward - Follow Simple Steps" />
+  <meta property="og:description" content="Complete simple steps to claim your reward. Enter your info, complete deals, and get rewarded today!" />
+  <meta property="og:type" content="website" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <!-- TikTok Pixel Code Start -->
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+  var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+  ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+    ttq.load('D4AGDKRC77U6T00CQCO0');
+    ttq.page();
+  }(window, document, 'ttq');
+  </script>
+  <!-- TikTok Pixel Code End -->
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      background: linear-gradient(135deg, hsl(0 0% 10%) 0%, hsl(0 0% 5%) 50%, hsl(0 0% 8%) 100%);
+      color: hsl(0 0% 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 3rem 1rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 28rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* Logo Section */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      animation: fadeIn 0.6s ease-out, float 3s ease-in-out infinite;
+    }
+
+    .logo-wrapper {
+      background: black;
+      border-radius: 19px;
+      padding: 0.75rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      border: 2px solid hsl(0 0% 25% / 0.5);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .logo-wrapper img {
+      width: 6rem;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* Main Content */
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.875rem;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 1.5rem;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    /* Steps List */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      animation: slideUp 0.6s ease-out;
+    }
+
+    .step {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 500;
+      animation: slideUp 0.6s ease-out;
+    }
+
+    .step-important {
+      margin-left: 0.5rem;
+      font-style: italic;
+      font-weight: normal;
+    }
+
+    /* Button */
+    .cta-button {
+      width: 100%;
+      padding: 1.25rem 2rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: hsl(0 0% 10%);
+      background: hsl(0 0% 100%);
+      border: 2px solid hsl(0 0% 90%);
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: slideUp 0.6s ease-out;
+      animation-delay: 400ms;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+
+    .cta-button:hover {
+      background: hsl(0 0% 95%);
+      transform: scale(1.02);
+      box-shadow: 0 10px 40px -10px hsl(0 0% 0% / 0.3);
+    }
+
+    .cta-button:active {
+      transform: scale(0.98);
+    }
+
+    /* Verification Badge */
+    .verification-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: hsl(0 0% 65%);
+      font-size: 0.875rem;
+      font-weight: 500;
+      animation: fadeIn 0.6s ease-out, float 3s ease-in-out infinite;
+      animation-delay: 500ms, 0s;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+
+    .verification-badge svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    /* Stats Card */
+    .stats-card {
+      border-radius: 1.5rem;
+      padding: 2rem;
+      border: 2px solid hsl(0 0% 25% / 0.5);
+      background: linear-gradient(135deg, hsl(0 0% 15%) 0%, hsl(0 0% 8%) 50%, hsl(0 0% 12%) 100%);
+      animation: slideUp 0.6s ease-out;
+      animation-delay: 600ms;
+      opacity: 0;
+      animation-fill-mode: forwards;
+      transition: all 0.3s ease;
+    }
+
+    .stats-card:hover {
+      border-color: hsl(0 0% 92% / 0.3);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      transform: scale(1.02);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+      transition: all 0.5s ease-out;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: hsl(0 0% 65%);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      body {
+        padding: 3rem 1rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .step {
+        font-size: 1.125rem;
+      }
+
+      .stats-grid {
+        gap: 1rem;
+      }
+
+      .stat-value {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <!-- Logo Section -->
-        <div class="logo-section">
-            <div class="logo-wrapper">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'%3E%3Ctext x='10' y='25' font-family='Arial' font-size='20' fill='white' font-weight='bold'%3EApple Pay%3C/text%3E%3C/svg%3E" alt="Apple Pay" />
-            </div>
-        </div>
-
-        <!-- Main Content -->
-        <div>
-            <!-- Heading -->
-            <h1>Apple Collab</h1>
-
-            <!-- Steps List -->
-            <div class="steps-list">
-                <div class="step">1. Click button below</div>
-                <div class="step">2. Enter email & info</div>
-                <div class="step">3. Complete deals<span class="important">(IMPORTANT)</span></div>
-                <div class="step">4. Claim reward!</div>
-            </div>
-
-            <!-- CTA Button -->
-            <button class="cta-button" onclick="handleCTAClick()">
-                Get Yours →
-            </button>
-
-            <!-- Verification Badge -->
-            <div class="verification">
-                <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                <span>Verified By TikTok</span>
-            </div>
-
-            <!-- Stats Card -->
-            <div class="stats-card">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-value" id="totalPaidOut">$802,674</div>
-                        <div class="stat-label">Total Paid Out</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value" id="peopleOnline">4,647</div>
-                        <div class="stat-label">People Online</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">86%</div>
-                        <div class="stat-label">Users Completing</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <!-- Logo Section -->
+    <div class="logo-container">
+      <div class="logo-wrapper">
+        <img src="Apple_Pay_Logo.png" alt="Apple Pay" />
+      </div>
     </div>
 
-    <script>
-        // Build CTA URL with query parameters
-        function buildCTAUrl() {
-            const qs = new URLSearchParams(window.location.search);
-            const sub = qs.get('mysubid') || qs.get('s1') || '';
-            const bbz = qs.get('bbz') || 'SKh4si4JVVAbNVQByD2HddBzWI9%2FupmLvQJDRoz7h5U%3D';
-            return `https://spnccrzone.com/?bbz=${bbz}&s1=${encodeURIComponent(sub)}`;
-        }
+    <!-- Main Content -->
+    <div class="content">
+      <!-- Heading -->
+      <h1>Apple Collab</h1>
 
-        function handleCTAClick() {
-            window.location.href = buildCTAUrl();
-        }
+      <!-- Steps List -->
+      <div class="steps-list">
+        <div class="step" style="animation-delay: 0ms">
+          1. Click button below
+        </div>
+        <div class="step" style="animation-delay: 100ms">
+          2. Enter email & info
+        </div>
+        <div class="step" style="animation-delay: 200ms">
+          3. Complete deals<span class="step-important">(IMPORTANT)</span>
+        </div>
+        <div class="step" style="animation-delay: 300ms">
+          4. Claim reward!
+        </div>
+      </div>
 
-        // Animate stats
-        let totalPaidOut = 802674;
-        let peopleOnline = 4647;
+      <!-- CTA Button -->
+      <button class="cta-button" onclick="handleCTAClick()">
+        Get Yours →
+      </button>
 
-        function formatCurrency(num) {
-            return `$${num.toLocaleString()}`;
-        }
+      <!-- Verification Badge -->
+      <div class="verification-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <span>Verified By TikTok</span>
+      </div>
 
-        function formatNumber(num) {
-            return num.toLocaleString();
-        }
+      <!-- Stats Card -->
+      <div class="stats-card">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <p class="stat-value" id="total-paid">$802,674</p>
+            <p class="stat-label">Total Paid Out</p>
+          </div>
+          <div class="stat-item">
+            <p class="stat-value" id="people-online">4,647</p>
+            <p class="stat-label">People Online</p>
+          </div>
+          <div class="stat-item">
+            <p class="stat-value">86%</p>
+            <p class="stat-label">Users Completing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        function updateStats() {
-            totalPaidOut += Math.floor(Math.random() * 1000) + 2000;
-            peopleOnline += Math.floor(Math.random() * 6) + 5;
+  <script>
+    // Build CTA URL with query parameters
+    function buildCTAUrl() {
+      const qs = new URLSearchParams(window.location.search);
+      const sub = qs.get('mysubid') || qs.get('s1') || '';
+      const bbz = qs.get('bbz') || 'SKh4si4JVVAbNVQByD2HddBzWI9%2FupmLvQJDRoz7h5U%3D';
+      return `https://spnccrzone.com/?bbz=${bbz}&s1=${encodeURIComponent(sub)}`;
+    }
 
-            document.getElementById('totalPaidOut').textContent = formatCurrency(totalPaidOut);
-            document.getElementById('peopleOnline').textContent = formatNumber(peopleOnline);
-        }
+    // Generate unique event ID
+    function makeEventId(prefix) {
+      return prefix + '_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    }
 
-        setInterval(updateStats, 2000);
-    </script>
+    // Handle CTA button click
+    function handleCTAClick() {
+      // Track AddToCart event
+      const eventId = makeEventId("atc");
+      window.ttq?.track(
+        "AddToCart",
+        {
+          content_type: "product",
+          content_id: "apple-gc-750",
+          value: 0.5,
+          currency: "USD",
+        },
+        { event_id: eventId }
+      );
+      
+      // Redirect to offer page
+      window.location.href = buildCTAUrl();
+    }
+
+    // Dynamic stats updates
+    let totalPaidOut = 802674;
+    let peopleOnline = 4647;
+
+    function updateStats() {
+      // Increase total paid out by 2000-3000 every 2 seconds
+      totalPaidOut += Math.floor(Math.random() * 1000) + 2000;
+      
+      // Increase people online by 5-10 every 2 seconds
+      peopleOnline += Math.floor(Math.random() * 6) + 5;
+
+      // Update DOM
+      document.getElementById('total-paid').textContent = `$${totalPaidOut.toLocaleString()}`;
+      document.getElementById('people-online').textContent = peopleOnline.toLocaleString();
+    }
+
+    // Update stats every 2 seconds
+    setInterval(updateStats, 2000);
+  </script>
 </body>
 </html>
